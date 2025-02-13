@@ -2,10 +2,14 @@
 /* Author: Re•MART */
 /* Version: 1.0.0 */
 
-/* Hide text in bookmarks bar */
-#PlacesToolbarItems > .bookmark-item .toolbarbutton-text {
-	display: none !important;
-}
-#PlacesToolbarItems > .bookmark-item {
-	padding-right: 0 !important;
+@-moz-document url-prefix('chrome://') {
+
+	/* Hide text in bookmarks bar */
+	#PlacesToolbarItems>.bookmark-item .toolbarbutton-text {
+		display: none !important;
+	}
+
+	#PlacesToolbarItems>.bookmark-item {
+		padding-right: 0 !important;
+	}
 }
