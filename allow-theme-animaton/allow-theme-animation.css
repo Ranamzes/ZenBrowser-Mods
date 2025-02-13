@@ -1,0 +1,21 @@
+:is(:root[zen-compact-mode="false"],
+	:root[zen-compact-mode="true"]:is(@media (-moz-bool-pref: "zen.view.compact.hide-toolbar"))) #navigator-toolbox {
+	background-image: var(--lwt-header-image),
+	var(--lwt-additional-images) !important;
+	background-repeat: no-repeat,
+	var(--lwt-background-tiling),
+	no-repeat !important;
+}
+
+:root[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]) {
+	@media (-moz-bool-pref: "zen.view.compact.hide-tabbar") or (-moz-bool-pref: "zen.view.use-single-toolbar") {
+		& #navigator-toolbox:not([animate="true"]) #titlebar {
+			background: var(--lwt-header-image), var(--zen-main-browser-background-toolbar) !important;
+			-webkit-backdrop-filter: blur(5px) !important;
+			backdrop-filter: blur(5px) !important;
+			background-repeat: no-repeat !important;
+			background-attachment: scroll, fixed !important;
+			background-size: 250% auto, 2000px !important;
+		}
+	}
+}
